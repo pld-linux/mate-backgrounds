@@ -1,11 +1,11 @@
 Summary:	MATE Desktop backgrounds
 Name:		mate-backgrounds
-Version:	1.5.0
+Version:	1.6.0
 Release:	1
 License:	GPL v2+
 Group:		Themes
-Source0:	http://pub.mate-desktop.org/releases/1.5/%{name}-%{version}.tar.xz
-# Source0-md5:	c385a3151b19e46e3bdd8b0ab0cd18ab
+Source0:	http://pub.mate-desktop.org/releases/1.6/%{name}-%{version}.tar.xz
+# Source0-md5:	b05ee6b9ef8faecb3fe95140526569cb
 URL:		http://mate-desktop.org/
 BuildRequires:	mate-common
 BuildRequires:	tar >= 1:1.22
@@ -21,9 +21,9 @@ Backgrounds for MATE Desktop.
 
 %build
 NOCONFIGURE=1 ./autogen.sh
-%configure
-%{__make} \
-	V=1
+%configure \
+	--disable-silent-rules
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -40,7 +40,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING README
 %{_datadir}/mate-background-properties
-%{_pixmapsdir}/backgrounds/mate
-
-# XXX packaged also by libgnome-2.32.1-1.i686
-%dir %{_pixmapsdir}/backgrounds
+%{_datadir}/backgrounds/mate
