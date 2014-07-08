@@ -44,8 +44,6 @@ rm -rf $RPM_BUILD_ROOT
 	INSTALL="install -p" \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/cmn
-
 %find_lang %{name} --all-name
 
 %clean
