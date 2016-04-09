@@ -1,12 +1,12 @@
 Summary:	MATE Desktop backgrounds
 Summary(pl.UTF-8):	Tła dla środowiska MATE Desktop
 Name:		mate-backgrounds
-Version:	1.12.0
+Version:	1.14.0
 Release:	1
 License:	GPL v2+
 Group:		Themes
-Source0:	http://pub.mate-desktop.org/releases/1.12/%{name}-%{version}.tar.xz
-# Source0-md5:	7edcf70a058e4ec0ddf8666f84360e81
+Source0:	http://pub.mate-desktop.org/releases/1.14/%{name}-%{version}.tar.xz
+# Source0-md5:	28f183f658f6b648cc86d5f0973acb90
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
@@ -43,6 +43,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	INSTALL="install -p" \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/frp
 
 %find_lang %{name} --all-name
 
