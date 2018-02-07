@@ -1,12 +1,12 @@
 Summary:	MATE Desktop backgrounds
 Summary(pl.UTF-8):	Tła dla środowiska MATE Desktop
 Name:		mate-backgrounds
-Version:	1.18.0
+Version:	1.20.0
 Release:	1
 License:	GPL v2+
 Group:		Themes
-Source0:	http://pub.mate-desktop.org/releases/1.18/%{name}-%{version}.tar.xz
-# Source0-md5:	c737fa6cc615ce381c88de874d7df211
+Source0:	http://pub.mate-desktop.org/releases/1.20/%{name}-%{version}.tar.xz
+# Source0-md5:	3ce47300f7e7d4d3b551659cc547c5d3
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
