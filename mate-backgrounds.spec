@@ -1,17 +1,17 @@
 Summary:	MATE Desktop backgrounds
 Summary(pl.UTF-8):	Tła dla środowiska MATE Desktop
 Name:		mate-backgrounds
-Version:	1.22.0
+Version:	1.24.0
 Release:	1
 License:	GPL v2+
 Group:		Themes
-Source0:	http://pub.mate-desktop.org/releases/1.22/%{name}-%{version}.tar.xz
-# Source0-md5:	f3f21b86f63552002362faecf0b7abe9
+Source0:	http://pub.mate-desktop.org/releases/1.24/%{name}-%{version}.tar.xz
+# Source0-md5:	bd59db8dbc0d5856160597c32e3b705e
+Patch0:		noarch-build.patch
 URL:		http://mate-desktop.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
-BuildRequires:	gettext-tools >= 0.10.40
-BuildRequires:	intltool >= 0.35.0
+BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	mate-common
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -28,9 +28,9 @@ odgałęzienie GNOME backgrounds.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
-%{__intltoolize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
@@ -44,7 +44,7 @@ rm -rf $RPM_BUILD_ROOT
 	INSTALL="install -p" \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{frp,ku_IQ}
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{frp,ie,ku_IQ}
 
 %find_lang %{name} --all-name
 
