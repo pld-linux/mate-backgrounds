@@ -7,12 +7,12 @@ License:	GPL v2+
 Group:		Themes
 Source0:	http://pub.mate-desktop.org/releases/1.24/%{name}-%{version}.tar.xz
 # Source0-md5:	62ba0b82392eab6c8122a519abd84742
-Patch0:		noarch-build.patch
 URL:		http://mate-desktop.org/
-BuildRequires:	autoconf >= 2.53
-BuildRequires:	automake >= 1:1.9
 BuildRequires:	gettext-tools >= 0.19.8
+BuildRequires:	meson >= 0.41.0
 BuildRequires:	mate-common
+BuildRequires:	ninja
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildArch:	noarch
@@ -28,21 +28,14 @@ odgałęzienie GNOME backgrounds.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-%{__aclocal}
-%{__autoconf}
-%{__automake}
-%configure \
-	--disable-silent-rules
-%{__make}
+%meson build
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install \
-	INSTALL="install -p" \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{frp,ie,ku_IQ}
 
