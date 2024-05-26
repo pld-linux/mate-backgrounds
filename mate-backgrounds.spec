@@ -1,13 +1,13 @@
 Summary:	MATE Desktop backgrounds
 Summary(pl.UTF-8):	Tła dla środowiska MATE Desktop
 Name:		mate-backgrounds
-Version:	1.26.0
+Version:	1.28.0
 Release:	1
 License:	GPL v2+
 Group:		Themes
-Source0:	https://pub.mate-desktop.org/releases/1.26/%{name}-%{version}.tar.xz
-# Source0-md5:	a078977e9be2f2b9121a0df9cf8b157d
-URL:		http://mate-desktop.org/
+Source0:	https://pub.mate-desktop.org/releases/1.28/%{name}-%{version}.tar.xz
+# Source0-md5:	0da8d4d3de5f4dacf66c73a7f7a3452f
+URL:		https://mate-desktop.org/
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	meson >= 0.41.0
 BuildRequires:	mate-common
@@ -31,10 +31,12 @@ odgałęzienie GNOME backgrounds.
 
 %build
 %meson build
+
 %ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %ninja_install -C build
 
 %{__rm} -r $RPM_BUILD_ROOT%{_localedir}/{frp,ie,ku_IQ}
