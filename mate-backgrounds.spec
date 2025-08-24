@@ -12,7 +12,7 @@ BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	meson >= 0.41.0
 BuildRequires:	mate-common
 BuildRequires:	ninja
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildArch:	noarch
